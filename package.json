@@ -1,0 +1,27 @@
+{
+  "name": "coronito",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "start": "next start",
+    "build": "next build"
+  },
+  "keywords": [
+    "corona",
+    "covid",
+    "covid19",
+    "virus"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "isomorphic-unfetch": "^3.0.0",
+    "lodash.upperfirst": "^4.3.1",
+    "next": "^9.3.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
+  },
+  "devDependencies": {}
+}
