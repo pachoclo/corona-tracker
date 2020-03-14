@@ -2,7 +2,7 @@
 
 ### The number uno COVID-19 Tracker
 
-Next.js based UI for tracking Corona virus panic development
+[Next.js](https://nextjs.org/) based UI for tracking Corona virus panic development
 
 ## 🕹Get started
 
