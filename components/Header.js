@@ -11,7 +11,7 @@ export const Header = () => (
     </Link>
 
     <Link href='/country/[country]' as='/country/canada'>
-      <a style={linkStyle}>Canada</a>
+      <a style={linkStyle}>🇨🇦 Canada</a>
     </Link>
   </div>
 )

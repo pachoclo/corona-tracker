@@ -4,7 +4,7 @@
 
 [Next.js](https://nextjs.org/) based UI for tracking Corona virus panic development
 
-## 🕹Get started
+## 🕹 Get started
 
 Install Dependencies
 ```

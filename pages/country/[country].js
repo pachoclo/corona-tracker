@@ -8,17 +8,16 @@ const Country = ({ stats }) => {
 
   return (
     <Layout>
-      <h1>{upperFirst(router.query.country)}</h1>
+      <h3>{upperFirst(router.query.country)}</h3>
 
       <p>{stats.cases} Cases</p>
       <p>{stats.deaths} Deaths</p>
       <p>{stats.recovered} Recovered</p>
       <p>{stats.critical} Critical</p>
 
-      <hr/>
+      <hr />
       <p>{stats.todayCases} New Cases Today</p>
-
-
+      <p>{stats.todayDeaths} Deaths Today</p>
     </Layout>
   )
 }

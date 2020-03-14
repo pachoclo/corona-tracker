@@ -4,8 +4,10 @@ import fetch from 'isomorphic-unfetch'
 export default function Index ({ stats }) {
   return (
     <Layout>
-      <h1>Coronito COVID-19 Tracker</h1>
+      <h1> 🦠 Coronito COVID-19 Tracker  🕵🏻‍♂️</h1>
 
+      <h3>🌎 World</h3>
+      
       <p>{stats.cases} Cases</p>
       <p>{stats.deaths} Deaths</p>
       <p>{stats.recovered} Recovered</p>
