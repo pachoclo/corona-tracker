@@ -27,7 +27,7 @@ export async function getServerSideProps ({ query }) {
   const data = await res.json()
 
   const country = data.find(
-    entry => entry.country.toLowerCase() === query.country
+    entry => entry.country.toLowerCase() === query.country.toLowerCase()
   )
 
   if (!country) {

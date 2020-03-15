@@ -1,17 +1,14 @@
-import Link from 'next/link'
+import Nav from "./Nav"
 
-const linkStyle = {
-  marginRight: 15
+const h1Style = {
+  fontWeight: 'normal',
+  fontSize: '46px',
+  fontFamily: 'Raleway'
 }
 
 export const Header = () => (
   <div>
-    <Link href='/'>
-      <a style={linkStyle}>World</a>
-    </Link>
-
-    <Link href='/country/[country]' as='/country/canada'>
-      <a style={linkStyle}>🇨🇦 Canada</a>
-    </Link>
+    <Nav />
+    <h1 style={h1Style}>Coronito covid-19 Tracker</h1>
   </div>
 )
