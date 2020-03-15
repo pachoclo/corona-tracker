@@ -17,7 +17,10 @@ export const Layout = ({
     <Head>
       <title>{title}</title>
       <meta charSet='utf-8' />
+      <meta name='theme-color' content='#000' />
       <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+      <link rel='manifest' href='/manifest.json' />
+      <link rel='apple-touch-icon' href='/icon-192.png'></link>
       <link
         href='https://fonts.googleapis.com/css?family=Raleway:400|Open+Sans&display=swap'
         rel='stylesheet'
