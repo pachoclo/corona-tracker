@@ -27,6 +27,14 @@ const Nav = () => (
     <Link href='/country/[country]' as='/country/USA'>
       <a style={linkStyle}>🇺🇸</a>
     </Link>
+    | {}
+    <Link href='/country/[country]' as='/country/Italy'>
+      <a style={linkStyle}>🇮🇹</a>
+    </Link>
+    | {}
+    <Link href='/country/[country]' as='/country/Iran'>
+      <a style={linkStyle}>🇮🇷</a>
+    </Link>
   </div>
 )
 
