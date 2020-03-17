@@ -10,14 +10,14 @@ const Country = ({ stats }) => {
     <Layout>
       <h3>{upperFirst(router.query.country)}</h3>
 
-      <p>{stats.cases.toLocaleString(navigator.language, { minimumFractionDigits: 0 })} Cases</p>
-      <p>{stats.deaths.toLocaleString(navigator.language, { minimumFractionDigits: 0 })} Deaths</p>
-      <p>{stats.recovered.toLocaleString(navigator.language, { minimumFractionDigits: 0 })} Recovered</p>
-      <p>{stats.critical.toLocaleString(navigator.language, { minimumFractionDigits: 0 })} Critical</p>
+      <p>{stats.cases} Cases</p>
+      <p>{stats.deaths} Deaths</p>
+      <p>{stats.recovered} Recovered</p>
+      <p>{stats.critical} Critical</p>
 
       <hr />
-      <p>{stats.todayCases.toLocaleString(navigator.language, { minimumFractionDigits: 0 })} New Cases Today</p>
-      <p>{stats.todayDeaths.toLocaleString(navigator.language, { minimumFractionDigits: 0 })} Deaths Today</p>
+      <p>{stats.todayCases} New Cases Today</p>
+      <p>{stats.todayDeaths} Deaths Today</p>
     </Layout>
   )
 }
