@@ -24,7 +24,7 @@ const Nav = () => (
     {countryCodeList.map(countryCode => (
       <>
         | {}
-        <CountryLink countryCode={countryCode} />
+        <CountryLink key={countryCode} countryCode={countryCode} />
       </>
     ))}
   </div>

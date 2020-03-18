@@ -13,26 +13,32 @@ const statsStyle = {
   marginTop: 30
 }
 
-const Country = ({ country, country_code, latest }) => {
+const Country = ({ country, latest, emoji }) => {
   const router = useRouter()
 
   return (
     <Layout>
-      <div style={flagStyle}>{getEmojiFlag(country_code)} </div>
-      <h2>{country}</h2>
+      {router.isFallback && <div>Loading...</div>}
 
-      <div style={statsStyle}>
-        <p>{latest.confirmed} Confirmed Cases</p>
-        <p>{latest.deaths} Deaths</p>
-        <p>{latest.recovered} Recovered</p>
-      </div>
+      {!router.isFallback && (
+        <>
+          <div style={flagStyle}>{emoji} </div>
+          <h2>{country}</h2>
+
+          <div style={statsStyle}>
+            <p>{latest.confirmed} Confirmed Cases</p>
+            <p>{latest.deaths} Deaths</p>
+            <p>{latest.recovered} Recovered</p>
+          </div>
+        </>
+      )}
     </Layout>
   )
 }
 
 export async function getStaticPaths () {
   const paths = countryCodeList.map(countryCode => `/country/${countryCode}`)
-  return { paths, fallback: false }
+  return { paths, fallback: true }
 }
 
 export async function getStaticProps ({ params }) {
@@ -46,7 +52,10 @@ export async function getStaticProps ({ params }) {
   }
 
   return {
-    props: reduceCountryLocations(data)
+    props: {
+      ...reduceCountryLocations(data),
+      emoji: getEmojiFlag(params.country)
+    }
   }
 }
 
