@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import getEmojiFlag from '../util/getEmojiFlag'
 
 const linkStyle = {
   marginRight: 5,
@@ -6,35 +7,26 @@ const linkStyle = {
   fontSize: 20
 }
 
+export const countryCodeList = ['CA', 'CO', 'CN', 'US', 'IT', 'IR']
+
+const CountryLink = ({ countryCode }) => (
+  <Link href='/country/[country]' as={`/country/${countryCode}`}>
+    <a style={linkStyle}>{getEmojiFlag(countryCode)}</a>
+  </Link>
+)
+
 const Nav = () => (
   <div>
     <Link href='/'>
       <a style={linkStyle}>🌎</a>
     </Link>
-    | {}
-    <Link href='/country/[country]' as='/country/Canada'>
-      <a style={linkStyle}>🇨🇦</a>
-    </Link>
-    | {}
-    <Link href='/country/[country]' as='/country/Colombia'>
-      <a style={linkStyle}>🇨🇴</a>
-    </Link>
-    | {}
-    <Link href='/country/[country]' as='/country/China'>
-      <a style={linkStyle}>🇨🇳</a>
-    </Link>
-    | {}
-    <Link href='/country/[country]' as='/country/USA'>
-      <a style={linkStyle}>🇺🇸</a>
-    </Link>
-    | {}
-    <Link href='/country/[country]' as='/country/Italy'>
-      <a style={linkStyle}>🇮🇹</a>
-    </Link>
-    | {}
-    <Link href='/country/[country]' as='/country/Iran'>
-      <a style={linkStyle}>🇮🇷</a>
-    </Link>
+
+    {countryCodeList.map(countryCode => (
+      <>
+        | {}
+        <CountryLink countryCode={countryCode} />
+      </>
+    ))}
   </div>
 )
 

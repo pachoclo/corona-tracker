@@ -1,46 +1,75 @@
-import { Layout } from '../../components/Layout'
-import { useRouter } from 'next/router'
-import upperFirst from 'lodash.upperfirst'
 import fetch from 'isomorphic-unfetch'
+import { useRouter } from 'next/router'
+import { Layout } from '../../components/Layout'
+import { countryCodeList } from '../../components/Nav'
+import getEmojiFlag from '../../util/getEmojiFlag'
 
-const Country = ({ stats }) => {
+const flagStyle = {
+  fontSize: 50,
+  marginBottom: -30
+}
+
+const statsStyle = {
+  marginTop: 30
+}
+
+const Country = ({ country, country_code, latest }) => {
   const router = useRouter()
 
   return (
     <Layout>
-      <h3>{upperFirst(router.query.country)}</h3>
+      <div style={flagStyle}>{getEmojiFlag(country_code)} </div>
+      <h2>{country}</h2>
 
-      <p>{stats.cases} Cases</p>
-      <p>{stats.deaths} Deaths</p>
-      <p>{stats.recovered} Recovered</p>
-      <p>{stats.critical} Critical</p>
-
-      <hr />
-      <p>{stats.todayCases} New Cases Today</p>
-      <p>{stats.todayDeaths} Deaths Today</p>
+      <div style={statsStyle}>
+        <p>{latest.confirmed} Confirmed Cases</p>
+        <p>{latest.deaths} Deaths</p>
+        <p>{latest.recovered} Recovered</p>
+      </div>
     </Layout>
   )
 }
 
-export async function getServerSideProps ({ query }) {
-  const res = await fetch('https://corona.lmao.ninja/countries')
+export async function getStaticPaths () {
+  const paths = countryCodeList.map(countryCode => `/country/${countryCode}`)
+  return { paths, fallback: false }
+}
+
+export async function getStaticProps ({ params }) {
+  const res = await fetch(
+    `https://coronavirus-tracker-api.herokuapp.com/v2/locations?country_code=${params.country}`
+  )
   const data = await res.json()
 
-  const country = data.find(
-    entry => entry.country.toLowerCase() === query.country.toLowerCase()
-  )
-
-  if (!country) {
-    throw new Error(`${query.country} not found in our country list.`)
+  if (!data) {
+    throw new Error(`${query.country} not found on the API.`)
   }
-
-  console.table(country)
 
   return {
-    props: {
-      stats: country
+    props: reduceCountryLocations(data)
+  }
+}
+
+const reduceCountryLocations = countryData => {
+  const initial = {
+    latest: {
+      deaths: 0,
+      confirmed: 0,
+      recovered: 0
     }
   }
+
+  return countryData.locations.reduce(
+    (acc, current) => ({
+      ...current,
+      latest: {
+        deaths: acc.latest.deaths + current.latest.deaths,
+        confirmed: acc.latest.confirmed + current.latest.confirmed,
+        recovered: acc.latest.recovered + current.latest.recovered
+      }
+    }),
+    initial
+  )
 }
 
 export default Country
