@@ -7,6 +7,10 @@ const linkStyle = {
   fontSize: 20
 }
 
+const navStyle = {
+  marginBottom: 25
+}
+
 export const countryCodeList = ['CA', 'CO', 'CN', 'US', 'IT', 'IR']
 
 const CountryLink = ({ countryCode }) => (
@@ -15,11 +19,15 @@ const CountryLink = ({ countryCode }) => (
   </Link>
 )
 
+const WorldLink = () => (
+  <Link href='/'>
+    <a style={linkStyle}>{'🌎'}</a>
+  </Link>
+)
+
 const Nav = () => (
-  <div>
-    <Link href='/'>
-      <a style={linkStyle}>🌎</a>
-    </Link>
+  <div style={navStyle}>
+    <WorldLink />
 
     {countryCodeList.map(countryCode => (
       <>

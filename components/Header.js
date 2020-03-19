@@ -2,13 +2,14 @@ import Nav from "./Nav"
 
 const h1Style = {
   fontWeight: 'normal',
-  fontSize: '46px',
-  fontFamily: 'Raleway'
+  fontSize: '32px',
+  fontFamily: 'Raleway',
+  marginTop: 10
 }
 
 export const Header = () => (
   <div>
+    <h1 style={h1Style}>CORONITO</h1>
     <Nav />
-    <h1 style={h1Style}>Coronito covid-19 Tracker</h1>
   </div>
 )

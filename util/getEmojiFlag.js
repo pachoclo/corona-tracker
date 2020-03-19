@@ -1,3 +1,4 @@
 import emojiFlags from './flag-emojis-by-code'
 
-export default countryCode => emojiFlags[countryCode].emoji
+export default countryCode =>
+  emojiFlags[countryCode.toUpperCase()]?.emoji || ' '

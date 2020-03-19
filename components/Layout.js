@@ -1,12 +1,15 @@
 import { Header } from './Header'
 import Head from 'next/head'
 
-const layoutStyle = {
-  margin: 20,
-  padding: 20,
-  fontFamily: 'Open Sans',
+const mainStyle = {
+  backgroundColor: '#fafafa',
   color: '#444444',
-  fontSize: '16px'
+  display: 'flex',
+  height: '100vh',
+  flexDirection: 'column',
+  fontFamily: 'Open Sans',
+  fontSize: 16,
+  padding: 10
 }
 
 export const Layout = ({
@@ -27,9 +30,9 @@ export const Layout = ({
       />
     </Head>
 
-    <div style={layoutStyle}>
+    <main style={mainStyle}>
       <Header />
       {children}
-    </div>
+    </main>
   </>
 )

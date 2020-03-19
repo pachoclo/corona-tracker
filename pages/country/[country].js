@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import { Layout } from '../../components/Layout'
 import { countryCodeList } from '../../components/Nav'
 import getEmojiFlag from '../../util/getEmojiFlag'
+import StatsCard from '../../components/StatsCard'
 
 const flagStyle = {
   fontSize: 50,
@@ -13,25 +14,12 @@ const statsStyle = {
   marginTop: 30
 }
 
-const Country = ({ country, latest, emoji }) => {
+const Country = stats => {
   const router = useRouter()
 
   return (
     <Layout>
-      {router.isFallback && <div>Loading...</div>}
-
-      {!router.isFallback && (
-        <>
-          <div style={flagStyle}>{emoji} </div>
-          <h2>{country}</h2>
-
-          <div style={statsStyle}>
-            <p>{latest.confirmed} Confirmed Cases</p>
-            <p>{latest.deaths} Deaths</p>
-            <p>{latest.recovered} Recovered</p>
-          </div>
-        </>
-      )}
+      {router.isFallback ? <div>Loading...</div> : <StatsCard stats={stats} />}
     </Layout>
   )
 }
