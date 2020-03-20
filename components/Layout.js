@@ -4,7 +4,7 @@ import styles from './Layout.module.css'
 
 export const Layout = ({
   children,
-  title = 'Coronito :: covid-19 virus tracker'
+  title = 'Coronito: Covid-19 virus tracker'
 }) => (
   <>
     <Head>

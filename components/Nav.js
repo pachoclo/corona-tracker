@@ -5,10 +5,7 @@ import styles from './Nav.module.css'
 export const countryCodeList = ['CA', 'CO', 'CN', 'US', 'IT', 'IR']
 
 const CountryLink = ({ countryCode }) => (
-  <Link
-    href='/country/[country]'
-    as={`/country/${countryCode}`}
-  >
+  <Link href='/country/[country]' as={`/country/${countryCode}`}>
     <a className={styles.linkStyle}>{getEmojiFlag(countryCode)}</a>
   </Link>
 )
@@ -19,7 +16,7 @@ const WorldLink = () => (
   </Link>
 )
 
-const Nav = () => (
+export default () => (
   <div className={styles.navStyle}>
     <WorldLink />
 
@@ -28,5 +25,3 @@ const Nav = () => (
     ))}
   </div>
 )
-
-export default Nav

@@ -1,11 +1,13 @@
 import fetch from 'isomorphic-unfetch'
 import { Layout } from '../components/Layout'
 import StatsCard from '../components/StatsCard'
+import GraphCard from '../components/GraphCard'
 
 export default function Index ({ stats }) {
   return (
     <Layout>
-      <StatsCard stats={stats} />
+      <StatsCard stats={stats} /> 
+      <GraphCard stats={stats} />
     </Layout>
   )
 }

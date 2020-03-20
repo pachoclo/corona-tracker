@@ -1,14 +1,4 @@
-.card {
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0px 4px 25px -14px rgba(125, 125, 125, 1);
-  display: flex;
-  padding-bottom: 15px;
-  padding-top: 15px;
-  width: 380px;
-}
-
-.avatar {
+.avatarContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,7 +25,7 @@
 .statName {
   font-size: 14px;
   margin-left: 8px;
-  margin-bottom: 10px
+  margin-bottom: 10px;
 }
 
 .emoji {
@@ -43,9 +33,6 @@
 }
 
 @media screen and (max-width: 500px) {
-  .card {
-    width: 100%;
-  }
   .emoji {
     font-size: 36px;
   }
