@@ -4,13 +4,21 @@ import { Layout } from '../../components/Layout'
 import { countryCodeList } from '../../components/Nav'
 import getEmojiFlag from '../../util/getEmojiFlag'
 import StatsCard from '../../components/StatsCard'
+import GraphCard from '../../components/GraphCard'
 
 const Country = stats => {
   const router = useRouter()
 
   return (
     <Layout>
-      {router.isFallback ? <div>Loading...</div> : <StatsCard stats={stats} />}
+      {router.isFallback && <div>Loading...</div>}
+
+      {!router.isFallback && (
+        <>
+          <StatsCard stats={stats} />
+          <GraphCard stats={stats} />
+        </>
+      )}
     </Layout>
   )
 }

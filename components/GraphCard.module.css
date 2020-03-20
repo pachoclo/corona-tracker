@@ -1,2 +1,8 @@
-@media screen and (max-width: 500px) {
+/* @media screen and (max-width: 500px) {
+} */
+
+.graphContainer {
+  /* display: flex; */
+  width: 100%;
+  height: min(100vw, 410px);
 }

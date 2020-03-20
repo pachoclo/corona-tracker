@@ -19,6 +19,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@nivo/pie": "^0.61.1",
     "isomorphic-unfetch": "^3.0.0",
     "lodash.upperfirst": "^4.3.1",
     "next": "^9.3.0",
