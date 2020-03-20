@@ -6,10 +6,10 @@ export default ({ stats }) => {
   const { title, latest } = stats
 
   return (
-    <Card>
-      <div className={styles.graphContainer}>
-        <PieChart data={formatData(latest)} />
-      </div>
+    <Card minHeight='400px' height='400px' >
+    {/* <div className={styles.graphContainer}> */}
+      <PieChart data={formatData(latest)} />
+    {/* </div> */}
     </Card>
   )
 }
@@ -18,17 +18,17 @@ const formatData = ({ confirmed, deaths, recovered }) => [
   {
     id: 'Recovered',
     label: 'Recovered',
-    value: recovered,
+    value: recovered
   },
   {
     id: 'Deaths',
     label: 'Deaths',
-    value: deaths,
+    value: deaths
   },
   {
     id: 'Confirmed',
     label: 'Confirmed',
-    value: confirmed,
+    value: confirmed
   }
 ]
 
