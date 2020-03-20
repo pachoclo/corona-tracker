@@ -5,15 +5,6 @@ import { countryCodeList } from '../../components/Nav'
 import getEmojiFlag from '../../util/getEmojiFlag'
 import StatsCard from '../../components/StatsCard'
 
-const flagStyle = {
-  fontSize: 50,
-  marginBottom: -30
-}
-
-const statsStyle = {
-  marginTop: 30
-}
-
 const Country = stats => {
   const router = useRouter()
 

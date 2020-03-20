@@ -1,16 +1,6 @@
 import { Header } from './Header'
 import Head from 'next/head'
-
-const mainStyle = {
-  backgroundColor: '#fafafa',
-  color: '#444444',
-  display: 'flex',
-  height: '100vh',
-  flexDirection: 'column',
-  fontFamily: 'Open Sans',
-  fontSize: 16,
-  padding: 10
-}
+import styles from './Layout.module.css'
 
 export const Layout = ({
   children,
@@ -30,7 +20,7 @@ export const Layout = ({
       />
     </Head>
 
-    <main style={mainStyle}>
+    <main className={styles.main}>
       <Header />
       {children}
     </main>

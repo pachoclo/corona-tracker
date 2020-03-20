@@ -2,7 +2,7 @@
   "name": "coronito",
   "version": "1.0.0",
   "description": "Coronito, the number uno corona virus tracker",
-  "repository": "",
+  "repository": "https://github.com/pachoclo/coronito",
   "main": "index.js",
   "scripts": {
     "dev": "next",

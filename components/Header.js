@@ -1,15 +1,10 @@
-import Nav from "./Nav"
+import Nav from './Nav'
 
-const h1Style = {
-  fontWeight: 'normal',
-  fontSize: '32px',
-  fontFamily: 'Raleway',
-  marginTop: 10
-}
+import styles from './Header.module.css'
 
 export const Header = () => (
-  <div>
-    <h1 style={h1Style}>CORONITO</h1>
+  <div className={styles.container}>
+    <h1 >CORONITO</h1>
     <Nav />
   </div>
 )
