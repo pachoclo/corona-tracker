@@ -1,8 +1,25 @@
-/* @media screen and (max-width: 500px) {
-} */
-
 .graphContainer {
-  /* display: flex; */
   width: 100%;
-  height: min(100vw, 410px);
+  height: 5000px;
+}
+
+@media screen and (min-width: 320px) {
+  .graphContainer {
+    height: 330px;
+  }
+}
+@media screen and (min-width: 375px) {
+  .graphContainer {
+    height: 400px;
+  }
+}
+@media screen and (min-width: 425px) {
+  .graphContainer {
+    height: 475px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .graphContainer {
+    height: 430px;
+  }
 }
