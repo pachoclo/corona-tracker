@@ -23,6 +23,12 @@
   padding-right: 20px;
 }
 
+.statValue {
+  display: inline-block;
+  min-width: 65px;
+  margin-bottom: 5px;
+}
+
 .statName {
   font-size: 14px;
   margin-left: 8px;

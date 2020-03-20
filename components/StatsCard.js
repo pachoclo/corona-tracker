@@ -11,17 +11,23 @@ export default ({ stats }) => (
 
     <div className={styles.stats}>
       <div>
-        {separateThousands(stats.latest.confirmed)}{' '}
+        <span className={styles.statValue}>
+          {separateThousands(stats.latest.confirmed)}{' '}
+        </span>
         <span className={styles.statName}>Confirmed</span>
       </div>
 
       <div>
-        {separateThousands(stats.latest.deaths)}{' '}
+        <span className={styles.statValue}>
+          {separateThousands(stats.latest.deaths)}{' '}
+        </span>
         <span className={styles.statName}>Deaths</span>
       </div>
 
       <div>
-        {separateThousands(stats.latest.recovered)}{' '}
+        <span className={styles.statValue}>
+          {separateThousands(stats.latest.recovered)}{' '}
+        </span>
         <span className={styles.statName}>Recovered</span>
       </div>
     </div>
