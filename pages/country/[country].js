@@ -41,7 +41,8 @@ export async function getStaticProps ({ params }) {
   return {
     props: {
       ...reduceCountryLocations(data),
-      emoji: getEmojiFlag(params.country)
+      emoji: getEmojiFlag(params.country),
+      lastUpdated: (new Date()).toLocaleString()
     }
   }
 }
