@@ -5,8 +5,9 @@ import Layout from '../../components/Layout'
 import StatsCard from '../../components/StatsCard'
 import getEmojiFlag from '../../util/getEmojiFlag'
 import { countryCodeList } from '../../components/Nav'
+import LastUpdated from '../../components/LastUpdated'
 
-const Country = stats => {
+const Country = ({stats, lastUpdated}) => {
   const router = useRouter()
 
   return (
@@ -17,6 +18,7 @@ const Country = stats => {
         <>
           <StatsCard stats={stats} />
           <GraphCard stats={stats} />
+          <LastUpdated date={lastUpdated} />
         </>
       )}
     </Layout>
@@ -40,9 +42,11 @@ export async function getStaticProps ({ params }) {
 
   return {
     props: {
-      ...reduceCountryLocations(data),
-      emoji: getEmojiFlag(params.country),
-      lastUpdated: (new Date()).toLocaleString()
+      stats: {
+        ...reduceCountryLocations(data),
+        emoji: getEmojiFlag(params.country)
+      },
+      lastUpdated: new Date().toLocaleString()
     }
   }
 }
