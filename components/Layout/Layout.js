@@ -1,8 +1,8 @@
-import { Header } from './Header'
+import Header from '../Header'
 import Head from 'next/head'
 import styles from './Layout.module.css'
 
-export const Layout = ({
+const Layout = ({
   children,
   title = 'Coronito: Covid-19 virus tracker'
 }) => (
@@ -26,3 +26,5 @@ export const Layout = ({
     </main>
   </>
 )
+
+export default Layout

@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-unfetch'
-import { Layout } from '../components/Layout'
 import StatsCard from '../components/StatsCard'
 import GraphCard from '../components/GraphCard'
+import Layout from '../components/Layout'
 
 export default function Index ({ stats }) {
   return (

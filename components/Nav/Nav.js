@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import getEmojiFlag from '../util/getEmojiFlag'
+import getEmojiFlag from '../../util/getEmojiFlag'
 import styles from './Nav.module.css'
 
 export const countryCodeList = ['CA', 'CO', 'CN', 'US', 'IT', 'IR']

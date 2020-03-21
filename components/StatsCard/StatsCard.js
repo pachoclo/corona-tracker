@@ -1,6 +1,6 @@
-import separateThousands from '../util/separateThousands'
+import separateThousands from '../../util/separateThousands'
 import styles from './StatsCard.module.css'
-import Card from './Card'
+import Card from '../Card'
 
 export default ({ stats }) => (
   <Card>

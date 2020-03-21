@@ -1,15 +1,13 @@
 import styles from './GraphCard.module.css'
-import Card from './Card'
 import { ResponsivePie } from '@nivo/pie'
+import Card from '../Card'
 
 export default ({ stats }) => {
   const { title, latest } = stats
 
   return (
-    <Card minHeight='400px' height='400px' >
-    {/* <div className={styles.graphContainer}> */}
+    <Card height='400px' >
       <PieChart data={formatData(latest)} />
-    {/* </div> */}
     </Card>
   )
 }

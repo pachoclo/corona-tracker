@@ -1,10 +1,10 @@
 import fetch from 'isomorphic-unfetch'
 import { useRouter } from 'next/router'
-import { Layout } from '../../components/Layout'
-import { countryCodeList } from '../../components/Nav'
-import getEmojiFlag from '../../util/getEmojiFlag'
-import StatsCard from '../../components/StatsCard'
 import GraphCard from '../../components/GraphCard'
+import Layout from '../../components/Layout'
+import StatsCard from '../../components/StatsCard'
+import getEmojiFlag from '../../util/getEmojiFlag'
+import { countryCodeList } from '../../components/Nav'
 
 const Country = stats => {
   const router = useRouter()
