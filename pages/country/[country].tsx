@@ -37,7 +37,7 @@ export async function getStaticProps ({ params }) {
   const data = await res.json()
 
   if (!data) {
-    throw new Error(`${query.country} not found on the API.`)
+    throw new Error(`${params.country} not found on the API.`)
   }
 
   return {
