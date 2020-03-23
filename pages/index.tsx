@@ -3,12 +3,14 @@ import StatsCard from '../components/StatsCard'
 import GraphCard from '../components/GraphCard'
 import Layout from '../components/Layout'
 import LastUpdated from '../components/LastUpdated'
+import BarChart from '../components/BarChart'
 
 export default function Index({ stats, lastUpdated }) {
   return (
     <Layout>
       <StatsCard stats={stats} />
-      <GraphCard stats={stats} />
+      {/* <GraphCard stats={stats} /> */}
+      <BarChart stats={stats} />
       <LastUpdated date={lastUpdated} />
     </Layout>
   )
