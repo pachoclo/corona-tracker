@@ -2,7 +2,7 @@ import Link from 'next/link'
 import getEmojiFlag from '../../util/getEmojiFlag'
 import styles from './Nav.module.css'
 
-export const countryCodeList = ['CN', 'CA', 'CO', 'IT', 'IR', 'FR', 'GB', 'JP', 'US']
+export const countryCodeList = ['CN', 'CA', 'CO', 'IT', 'IR', 'FR', 'GB', 'JP', 'US', 'ES']
 
 const CountryLink = ({ countryCode }) => (
   <Link href="/country/[country]" as={`/country/${countryCode}`}>
