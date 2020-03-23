@@ -16,4 +16,11 @@
 
 .navStyle {
   margin-bottom: 25px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: flex;
+}
+
+.navStyle::-webkit-scrollbar {
+  display: none;
 }
