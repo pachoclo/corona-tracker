@@ -6,7 +6,7 @@ export default ({ stats }) => {
   const { title, latest } = stats
 
   return (
-    <Card height='400px' >
+    <Card height="400px">
       <PieChart data={formatData(latest)} />
     </Card>
   )
@@ -47,13 +47,13 @@ const PieChart = ({ data }) => {
       enableRadialLabels={!isMobile}
       radialLabelsSkipAngle={10}
       radialLabelsTextXOffset={6}
-      radialLabelsTextColor='#333333'
+      radialLabelsTextColor="#333333"
       radialLabelsLinkOffset={0}
       radialLabelsLinkDiagonalLength={16}
       radialLabelsLinkHorizontalLength={24}
       radialLabelsLinkStrokeWidth={1}
       radialLabelsLinkColor={{ from: 'color' }}
-      sliceLabel='id'
+      sliceLabel="id"
       slicesLabelsSkipAngle={20}
       slicesLabelsTextColor={{ theme: 'background' }}
       animate={true}

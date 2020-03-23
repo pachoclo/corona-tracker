@@ -6,6 +6,7 @@ import StatsCard from '../../components/StatsCard'
 import getEmojiFlag from '../../util/getEmojiFlag'
 import { countryCodeList } from '../../components/Nav'
 import LastUpdated from '../../components/LastUpdated'
+import BarChart from '../../components/BarChart'
 
 const Country = ({stats, lastUpdated}) => {
   const router = useRouter()
@@ -17,7 +18,8 @@ const Country = ({stats, lastUpdated}) => {
       {!router.isFallback && (
         <>
           <StatsCard stats={stats} />
-          <GraphCard stats={stats} />
+          {/* <GraphCard stats={stats} /> */}
+          <BarChart stats={stats} />
           <LastUpdated date={lastUpdated} />
         </>
       )}
