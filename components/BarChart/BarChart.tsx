@@ -54,7 +54,7 @@ const Chart = ({ data }) => (
       format: label => separateThousands(label)
     }}
     labelFormat={label => separateThousands(label)}
-    labelSkipHeight={30}
+    labelSkipHeight={25}
     labelTextColor={{ from: 'color', modifiers: [['darker', 3]] }}
     legends={[
       {

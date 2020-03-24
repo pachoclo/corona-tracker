@@ -2,10 +2,7 @@ import Header from '../Header'
 import Head from 'next/head'
 import styles from './Layout.module.css'
 
-const Layout = ({
-  children,
-  title = 'Coronito: Covid-19 virus tracker'
-}) => (
+const Layout = ({ children, title = 'Coronito: corona virus tracker' }) => (
   <>
     <Head>
       <title>{title}</title>
@@ -18,6 +15,7 @@ const Layout = ({
         href='https://fonts.googleapis.com/css?family=Raleway:400|Open+Sans&display=swap'
         rel='stylesheet'
       />
+      <script type='text/javascript' src='/heap.js' />
     </Head>
 
     <main className={styles.main}>
