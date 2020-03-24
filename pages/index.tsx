@@ -1,15 +1,14 @@
 import fetch from 'isomorphic-unfetch'
 import StatsCard from '../components/StatsCard'
-import GraphCard from '../components/GraphCard'
 import Layout from '../components/Layout'
 import LastUpdated from '../components/LastUpdated'
 import BarChart from '../components/BarChart'
+import formatToEstTime from '../util/formatToEstTime'
 
 export default function Index({ stats, lastUpdated }) {
   return (
     <Layout>
       <StatsCard stats={stats} />
-      {/* <GraphCard stats={stats} /> */}
       <BarChart stats={stats} />
       <LastUpdated date={lastUpdated} />
     </Layout>
@@ -26,7 +25,9 @@ export async function getStaticProps() {
   return {
     props: {
       stats: { latest: data.latest, country: 'World', emoji: '🌎' },
-      lastUpdated: (new Date()).toLocaleString()
+      lastUpdated: formatToEstTime(new Date())
     }
   }
 }
+
+

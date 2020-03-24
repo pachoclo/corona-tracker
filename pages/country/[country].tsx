@@ -1,14 +1,14 @@
 import fetch from 'isomorphic-unfetch'
 import { useRouter } from 'next/router'
-import GraphCard from '../../components/GraphCard'
+import BarChart from '../../components/BarChart'
+import LastUpdated from '../../components/LastUpdated'
 import Layout from '../../components/Layout'
+import { countryCodeList } from '../../components/Nav'
 import StatsCard from '../../components/StatsCard'
 import getEmojiFlag from '../../util/getEmojiFlag'
-import { countryCodeList } from '../../components/Nav'
-import LastUpdated from '../../components/LastUpdated'
-import BarChart from '../../components/BarChart'
+import formatToEstTime from '../../util/formatToEstTime'
 
-const Country = ({stats, lastUpdated}) => {
+const Country = ({ stats, lastUpdated }) => {
   const router = useRouter()
 
   return (
@@ -18,7 +18,6 @@ const Country = ({stats, lastUpdated}) => {
       {!router.isFallback && (
         <>
           <StatsCard stats={stats} />
-          {/* <GraphCard stats={stats} /> */}
           <BarChart stats={stats} />
           <LastUpdated date={lastUpdated} />
         </>
@@ -27,12 +26,12 @@ const Country = ({stats, lastUpdated}) => {
   )
 }
 
-export async function getStaticPaths () {
+export async function getStaticPaths() {
   const paths = countryCodeList.map(countryCode => `/country/${countryCode}`)
   return { paths, fallback: true }
 }
 
-export async function getStaticProps ({ params }) {
+export async function getStaticProps({ params }) {
   const res = await fetch(
     `https://coronavirus-tracker-api.herokuapp.com/v2/locations?country_code=${params.country}`
   )
@@ -48,7 +47,7 @@ export async function getStaticProps ({ params }) {
         ...reduceCountryLocations(data),
         emoji: getEmojiFlag(params.country)
       },
-      lastUpdated: new Date().toLocaleString()
+      lastUpdated: formatToEstTime(new Date())
     }
   }
 }
