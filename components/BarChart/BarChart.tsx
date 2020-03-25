@@ -3,24 +3,24 @@ import Card from '../Card'
 import separateThousands from '../../util/separateThousands'
 
 const BarChart = ({ stats }) => {
-  let { confirmed, deaths, recovered } = stats.latest
+  // let { confirmed, deaths, recovered } = stats.latest
+  let { confirmed, deaths } = stats.latest
 
   let data = {
-    recovered,
+    // recovered,
     dead: deaths,
-    sick: confirmed - (deaths + recovered),
+    sick:  confirmed - deaths,
     country: stats.country
   }
 
   return (
-    <Card height={'400px'}>
+    <Card height={'350px'}>
       <Chart data={data} />
     </Card>
   )
 }
 
 const colorMap = {
-  recovered: '#66c2a5',
   dead: '#fc8d62',
   sick: '#8da0cb'
 }
@@ -29,8 +29,8 @@ const Chart = ({ data }) => (
   <ResponsiveBar
     minValue={0}
     data={[data]}
-    keys={['recovered', 'dead', 'sick']}
-    indexBy="country"
+    keys={['dead', 'sick']}
+    indexBy='country'
     margin={{ top: 15, right: 120, bottom: 40, left: 90 }}
     padding={0.3}
     colors={data => colorMap[data.id]}

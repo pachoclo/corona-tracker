@@ -24,12 +24,12 @@ export default ({ stats }) => (
         <span className={styles.statName}>Deaths</span>
       </div>
 
-      <div>
+      {/* <div>
         <span className={styles.statValue}>
           {separateThousands(stats.latest.recovered)}{' '}
         </span>
         <span className={styles.statName}>Recovered</span>
-      </div>
+      </div> */}
     </div>
   </Card>
 )
