@@ -9,28 +9,27 @@ It is also a PWA, so [you can install it](https://medium.com/progressivewebapps/
 > PWA Installation instructions -> ["How to install a PWA to your device?"](https://medium.com/progressivewebapps/how-to-install-a-pwa-to-your-device-68a8d37fadc1) 
 
 ## 🥅 Goals
-1. Create a **clean and simple** pwa/web/mobile app for people to track and visualize the data they find the most useful. 
-2. Offer context to emphasize a clear perspective (e.g. % of total world population, the flattening of the curve in countries that first fought the outbreak).
+1. Create a **clean and simple** app for people to track and visualize the covid data. 
 
 ## 🕹 Development
 
 Install Dependencies
 ```
-npm i
+yarn
 ```
 
 Start in development mode
 ```
-npm run dev
+yarn run dev
 ```
 
 Build for production
 ```
-npm run build
+yarn build
 ```
 
 Production run
 ```
-npm start
+yarn start
 ```
 
